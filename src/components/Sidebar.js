@@ -33,8 +33,9 @@ import { VideoCameraIcon as VideoCameraIconSolid } from '@heroicons/react/24/sol
 import { VideoCameraIcon } from '@heroicons/react/24/outline';
 import { SparklesIcon as SparklesIconSolid } from '@heroicons/react/24/solid';
 import { SparklesIcon } from '@heroicons/react/24/outline';
-import { ArrowLeftEndOnRectangleIcon } from '@heroicons/react/24/outline';
+import { UserIcon as UserIconSolid } from '@heroicons/react/24/solid';
 import { UserIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftEndOnRectangleIcon } from '@heroicons/react/24/outline';
 
 import { useThemeContext } from '../utils/ThemeRegistry';
 import { SwitchWithIcons } from '@/app/assets/SwitchWithIcon';
@@ -183,7 +184,9 @@ export default function Sidebar({ children }) {
 
     const settings = [{
         tab: PROFILE_SETTINGS,
-        icon: <UserIcon width="24px" color={theme.palette.white.main} />
+        icon: <UserIcon width="24px" color={theme.palette.white.main} />,
+        iconSelect: <UserIconSolid width="24px" color="grey.100" />,
+
     },
     {
         tab: EXIT_APP,

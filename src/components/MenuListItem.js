@@ -28,11 +28,11 @@ function MenuListItem({ item }) {
     const hasSubTabs = Array.isArray(menuOptions);
     const tabValue = tab.toLowerCase().replace(/[\s\W]+/g, '-');
     const isActiveTab =
-        pathname.includes(`/${tabValue}`) ||
-        (pathname === '/' && tab === GET_STARTED);
+        (pathname.includes(`/${tabValue}`) ||
+            pathname === '/' && tab === GET_STARTED);
 
     return (
-        <>
+        <Box key={`${tabValue}-item`}>
             <ListItem key={tabValue} disablePadding>
                 <ListItemButton
                     sx={{
@@ -43,7 +43,7 @@ function MenuListItem({ item }) {
                         color: 'grey.A700',
                         '&.Mui-selected': {
                             color: 'grey.100',
-                            bgcolor: 'grey.900',
+                            bgcolor: open && isActiveTab ? 'transparent' : 'grey.900',
                             borderRadius: '4px',
                         },
                         '&.Mui-selected:hover': {
@@ -62,7 +62,7 @@ function MenuListItem({ item }) {
                     }}
                 >
 
-                    {icon}
+                    {isActiveTab ? iconSelect : icon}
                     <ListItemText sx={{ ml: 2 }} primary={tab} />
                     {hasSubTabs && <Chip sx={{ mr: 1 }} label={menuOptions.length} size="small" />}
                     {hasSubTabs && <Box
@@ -82,7 +82,7 @@ function MenuListItem({ item }) {
                     {(menuOptions || []).map(({ subTab = '' }) => {
                         const subTabValue = subTab.toLowerCase().replace(/[\s\W]+/g, '-');
                         return (
-                            <ListItem key={subTabValue} disablePadding>
+                            <ListItem key={`${tabValue}-${subTabValue}`} disablePadding>
                                 <ListItemButton
                                     sx={{
                                         gap: 2,
@@ -120,7 +120,8 @@ function MenuListItem({ item }) {
                     })}
                 </List>
             </Collapse>}
-        </>);
+        </Box >
+    );
 };
 
 export default MenuListItem;
