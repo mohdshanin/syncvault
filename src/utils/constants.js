@@ -9,6 +9,8 @@ export const SIDEBAR_TABS = {
     ARTIST_TOOLS: 'Artist Tools',
     CREATOR_TOOLS: 'Creator Tools',
     BRAND_TOOLS: 'Brand Tools',
+    PROFILE_SETTINGS: 'Profile Settings',
+    EXIT_APP: 'Exit App',
 };
 
 export const SUB_SIDEBAR_TABS = {

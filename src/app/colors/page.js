@@ -1,7 +1,6 @@
-'use client'
+'use client';
 import { Box } from '@mui/material';
 import useTheme from '@mui/material/styles/useTheme';
-import React from 'react'
 
 function Colors() {
     const theme = useTheme()
