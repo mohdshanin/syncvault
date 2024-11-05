@@ -75,7 +75,6 @@ export default function Home() {
         checked={activeTheme}
         onChange={toggleTheme}
       />
-      <Link component={NextLink} href="/my-wallet">To My Wallet Page</Link>
     </Box>
 
   );

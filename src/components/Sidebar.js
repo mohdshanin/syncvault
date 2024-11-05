@@ -261,7 +261,7 @@ export default function Sidebar({ children }) {
                     }}
                     component="nav"
                 >
-                    {getStarted.map((item) => <MenuListItem item={item} />)}
+                    {getStarted.map((item, index) => <MenuListItem key={index} item={item} />)}
                 </List>
                 <List
                     sx={{
@@ -288,7 +288,7 @@ export default function Sidebar({ children }) {
                         </ListSubheader>
                     }
                 >
-                    {web2.map((item) => <MenuListItem item={item} />)}
+                    {web2.map((item, index) => <MenuListItem key={index} item={item} />)}
                 </List>
                 <List
                     sx={{
@@ -314,7 +314,7 @@ export default function Sidebar({ children }) {
                         </ListSubheader>
                     }
                 >
-                    {web3.map((item) => <MenuListItem item={item} />)}
+                    {web3.map((item, index) => <MenuListItem key={index} item={item} />)}
 
                 </List>
                 <List
@@ -341,7 +341,7 @@ export default function Sidebar({ children }) {
                         </ListSubheader>
                     }
                 >
-                    {toolBaar.map((item) => <MenuListItem item={item} />)}
+                    {toolBaar.map((item, index) => <MenuListItem key={index} item={item} />)}
                 </List>
                 <Box flexGrow={1} />
                 <List
@@ -357,7 +357,7 @@ export default function Sidebar({ children }) {
                     }}
                     component="div"
                 >
-                    {settings.map((item) => <MenuListItem item={item} />)}
+                    {settings.map((item, index) => <MenuListItem key={index} item={item} />)}
                 </List>
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, mt: 8 }}>
