@@ -5,7 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { Box, Chip, Collapse, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { ChevronDownIcon, ChevronUpIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
-import * as globalConstants from '../utils/constants';
+import * as globalConstants from './constants';
 const { SIDEBAR_TABS } = globalConstants;
 
 const {
@@ -43,7 +43,7 @@ function MenuListItem({ item }) {
                         color: 'grey.A700',
                         '&.Mui-selected': {
                             color: 'grey.100',
-                            bgcolor: open && isActiveTab ? 'transparent' : 'grey.900',
+                            bgcolor: open && isActiveTab ? 'grey.800' : 'grey.900',
                             borderRadius: '4px',
                         },
                         '&.Mui-selected:hover': {

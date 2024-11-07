@@ -67,6 +67,9 @@ export default function ThemeRegistry(props) {
         () => createTheme({
             typography: {
                 fontFamily: 'var(--font-poppins)',
+                button: {
+                    textTransform: 'none'
+                }
             },
             palette: {
                 mode: activeTheme ? 'dark' : 'light',
@@ -87,16 +90,7 @@ export default function ThemeRegistry(props) {
             <ThemeContext.Provider value={{ toggleTheme, activeTheme }}>
                 <MuiThemeProvider theme={theme}>
                     <CssBaseline />
-                    <Box
-                        sx={{
-                            color: 'white.main',
-                            backgroundColor: 'black.main'
-                        }}
-                        width={'100%'}
-                        height={'100%'}
-                    >
-                        {children}
-                    </Box>
+                    {children}
                 </MuiThemeProvider>
             </ThemeContext.Provider>
         </CacheProvider>
