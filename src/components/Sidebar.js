@@ -13,7 +13,6 @@ import Topbar from '../components/Topbar';
 
 import MenuListItem from '../utils/MenuListItem';
 import * as MenuTabList from '../utils/MenuTabList';
-const drawerWidth = 280;
 
 export default function Sidebar({ children }) {
     const theme = useTheme();
@@ -21,15 +20,20 @@ export default function Sidebar({ children }) {
     const { GetStarted, Web2, Web3, ToolBaar, Settings } = MenuTabList;
 
     return (
-        <Box sx={{ display: 'flex' }} position="relative">
+        <Box sx={{ display: 'flex', overflow: 'hidden' }} position="relative">
             <Drawer
                 sx={{
-                    width: drawerWidth,
                     flexShrink: 0,
+                    position: 'sticky',
+                    left: 0,
+                    top: 0,
                     '& .MuiDrawer-paper': {
-                        width: drawerWidth,
+                        position: 'sticky',
+                        height: '100vh',
                         boxSizing: 'border-box',
                         bgcolor: 'black.main',
+                        left: 0,
+                        top: 0,
                     },
                 }}
                 variant="permanent"
@@ -38,8 +42,8 @@ export default function Sidebar({ children }) {
                 <Toolbar
                     sx={{
                         bgcolor: 'black.main',
-                        position: 'sticky',
                         px: '16px',
+                        position: 'sticky',
                         zIndex: 100,
                         left: 0,
                         top: 0,
@@ -161,7 +165,6 @@ export default function Sidebar({ children }) {
                         bgcolor: 'background.paper',
                         mt: 2,
                         position: 'sticky',
-                        zIndex: 100,
                         left: 0,
                         bottom: 0,
                         borderTop: '2px solid',
@@ -172,9 +175,31 @@ export default function Sidebar({ children }) {
                     {Settings.map((item, index) => <MenuListItem key={index} item={item} />)}
                 </List>
             </Drawer>
-            <Box component="main" sx={{ flexGrow: 1 }}>
+            <Box
+                sx={{
+                    color: 'white.main',
+                    backgroundColor: 'black.main'
+                }}
+                width={'100%'}
+                position="relative"
+            >
                 <Topbar />
-                {children}
+                <Box
+                    component="main"
+                    width={'100%'}
+                    height={'100%'}
+                    position={'absolute'}
+                    top={0}
+                    right={0}
+                    left={0}
+                    bottom={0}
+                    pt={9}
+                    sx={{
+                        overflowY: 'scroll'
+                    }}
+                >
+                    {children}
+                </Box>
             </Box>
         </Box>
     );

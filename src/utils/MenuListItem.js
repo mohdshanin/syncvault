@@ -63,7 +63,7 @@ function MenuListItem({ item }) {
                 >
 
                     {isActiveTab ? iconSelect : icon}
-                    <ListItemText sx={{ ml: 2 }} primary={tab} />
+                    <ListItemText sx={{ ml: 2, mr: 3 }} primary={tab} />
                     {hasSubTabs && <Chip sx={{ mr: 1 }} label={menuOptions.length} size="small" />}
                     {hasSubTabs && <Box
                         onClick={(e) => {
