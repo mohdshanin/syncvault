@@ -66,7 +66,7 @@ export default function ThemeRegistry(props) {
     const theme = useMemo(
         () => createTheme({
             typography: {
-                fontFamily: 'var(--font-poppins)',
+                fontFamily: "'var(--font-inter)', Arial, sans- serif",
                 button: {
                     textTransform: 'none'
                 }

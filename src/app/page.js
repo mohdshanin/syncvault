@@ -8,6 +8,7 @@ import useTheme from '@mui/material/styles/useTheme';
 import styles from './page.module.css'
 
 import NoticeBanner from '../components/NoticeBanner';
+import HeroSection from '../components/HeroSection';
 
 import { useThemeContext } from '../utils/ThemeRegistry';
 import { SwitchWithIcons } from '../assets/SwitchWithIcon'
@@ -21,6 +22,8 @@ export default function Home() {
   return (
     <Box>
       <NoticeBanner />
+      <HeroSection />
+      <HeroSection rightTextContainer />
       <Box
         className={styles.container}
       >

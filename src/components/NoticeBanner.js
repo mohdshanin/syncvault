@@ -20,7 +20,8 @@ function NoticeBanner() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '0.5rem 1rem',
+                py: 1,
+                px: 4,
                 background: 'linear-gradient(90deg, #8a0032, #4a0032)',
                 color: 'grey.100',
                 width: '100%'

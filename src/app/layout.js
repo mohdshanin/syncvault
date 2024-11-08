@@ -1,17 +1,16 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import ThemeRegistry from '../utils/ThemeRegistry'
-import { Poppins } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
 import Sidebar from '../components/Sidebar';
 import "./globals.css";
 
-const poppins = Poppins({
+const inter = Inter({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-poppins ',
+  variable: '--font-inter',
 });
-
 
 export const metadata = {
   title: "Create Next App",
@@ -25,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable}`}>
+      <body className={`${inter.variable}`}>
         <AppRouterCacheProvider>
           <ThemeRegistry options={{ key: 'mui-theme' }} {...pageProps}>
             <Sidebar>
