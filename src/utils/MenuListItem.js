@@ -40,7 +40,7 @@ function MenuListItem({ item }) {
                         p: 0.5,
                         pl: 1,
                         my: isSettingsTab ? 1 : 0,
-                        color: 'grey.A700',
+                        color: 'grey.A400',
                         '&.Mui-selected': {
                             color: 'grey.100',
                             bgcolor: open && isActiveTab ? 'grey.800' : 'grey.900',
@@ -98,7 +98,7 @@ function MenuListItem({ item }) {
                                         '&.Mui-selected:hover': {
                                             bgcolor: 'grey.800',
                                         },
-                                        "&:hover": { bgcolor: "grey.300" }
+                                        "&:hover": { bgcolor: activeTheme ? "grey.900" : "grey.500" }
                                     }}
                                     selected={pathname.includes(`/${tabValue}/${subTabValue}`)}
                                     onClick={(e) => {
@@ -108,11 +108,7 @@ function MenuListItem({ item }) {
                                         router.replace(`/${tabValue}/${subTabValue}`)
                                     }}
                                 >
-                                    <ListItemIcon
-                                        sx={{
-                                            minWidth: '25px',
-                                        }}
-                                    />
+                                    <ListItemIcon sx={{ minWidth: '25px' }} />
                                     <ListItemText primary={subTabValue} />
                                 </ListItemButton>
                             </ListItem>

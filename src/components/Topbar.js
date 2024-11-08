@@ -1,13 +1,14 @@
 'use client'
-import React from 'react';
+import Link from '@mui/material/Link';
+import * as NextLink from 'next/link';
 import { AppBar, Toolbar, Button, IconButton, Box, InputBase } from '@mui/material';
 import useTheme from '@mui/material/styles/useTheme';
 import { BellIcon } from '@heroicons/react/24/outline';
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
-import { SwitchWithIcons } from '@/app/assets/SwitchWithIcon';
+import { SwitchWithIcons } from '../assets/SwitchWithIcon';
 
 import { useThemeContext } from '../utils/ThemeRegistry';
+import SearchInput from './SearchInput';
 
 const label = { inputProps: { "aria-label": "Theme Switch" } };
 
@@ -25,39 +26,42 @@ function Topbar() {
                 top: 0,
                 left: 0,
             }}
-            color='success' >
-            <Toolbar sx={{
-                color: 'grey.A700',
-                bgcolor: 'black.main'
-            }}>
+        >
+            <Toolbar
+                disableGutters
+                sx={{
+                    color: 'grey.500',
+                    bgcolor: 'black.main'
+                }}>
                 {/* Search Bar */}
-                <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1, }}>
-                    <MagnifyingGlassIcon width="24px" color={theme.palette.grey.A400} />
-                    <InputBase placeholder="Search..."
-                        sx={{
-                            ml: 1,
-                            width: '100%',
-                            pr: 2,
-                            'input::placeholder': {
-                                color: 'grey.A400',
-                                opacity: 1
-                            }
-                        }} />
-                </Box>
+                <SearchInput />
                 {/* Notification Icon */}
-                <Box sx={{ display: 'flex', height: '72px', border: '1px solid', borderColor: 'grey.900', alignItems: 'center' }}>
-                    <IconButton sx={{ mx: 1, color: "grey.A700" }}>
+                <Box sx={{
+                    display: 'flex',
+                    height: '72px',
+                    border: '1px solid',
+                    borderColor: 'grey.900',
+                    alignItems: 'center',
+                    '&:hover': { bgcolor: activeTheme ? "grey.900" : "grey.300" }
+                }}>
+                    <IconButton sx={{ mx: 1, color: "grey.500" }}>
                         <BellIcon width="24px" />
                     </IconButton>
                 </Box>
                 {/* Right-Side Buttons */}
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, ml: 3 }}>
-                    <Button color="inherit">My Wallet</Button>
-                    <Button color="inherit">Leaderboard</Button>
-                    <Button color="inherit">Communities</Button>
+                    <Link color='grey.500' sx={{ '&:hover': { color: 'white.main' } }} underline='none' component={NextLink} href="/my-wallet">My Wallet</Link>
+                    <Link color='grey.500' sx={{ '&:hover': { color: 'white.main' } }} underline='none' component={NextLink} href="/leaderboard">Leaderboard</Link>
+                    <Link color='grey.500' sx={{ '&:hover': { color: 'white.main' } }} underline='none' component={NextLink} href="/communities">Communities</Link>
                     <Button
-                        sx={{ backgroundColor: 'white.main', ml: 1 }}
+                        sx={{
+                            backgroundColor: 'white.main',
+                            ml: 1,
+                            '&:hover': { backgroundColor: 'grey.300' },
+                        }}
                         variant="contained"
+                        disableRipple
+                        size='large'
                     >
                         Sign In / Sign Up
                     </Button>
