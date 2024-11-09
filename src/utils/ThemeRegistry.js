@@ -74,10 +74,14 @@ export default function ThemeRegistry(props) {
             palette: {
                 mode: activeTheme ? 'dark' : 'light',
                 white: {
-                    main: activeTheme ? '#FFFFFF' : '#0A0A0A',
+                    main: activeTheme ? '#FFFFFF' : '#000000',
                 },
                 black: {
-                    main: activeTheme ? '#0A0A0A' : '#FFFFFF',
+                    main: activeTheme ? '#000000' : '#FFFFFF',
+                },
+                tonalOffset: {
+                    light: activeTheme ? '#0A0A0A' : '#eeeeee',
+                    dark: activeTheme ? '#080808' : '#f5f5f5',
                 },
             },
         }),

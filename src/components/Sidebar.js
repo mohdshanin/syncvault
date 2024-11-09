@@ -11,8 +11,8 @@ import { Toolbar } from '@mui/material';
 
 import Topbar from '../components/Topbar';
 
-import MenuListItem from '../utils/MenuListItem';
-import * as MenuTabList from '../utils/MenuTabList';
+import MenuListItem from '../assets/MenuListItem';
+import * as MenuTabList from '../assets/MenuTabList';
 
 export default function Sidebar({ children }) {
     const theme = useTheme();
@@ -20,7 +20,7 @@ export default function Sidebar({ children }) {
     const { GetStarted, Web2, Web3, ToolBaar, Settings } = MenuTabList;
 
     return (
-        <Box sx={{ display: 'flex', overflow: 'hidden' }} position="relative">
+        <Box sx={{ display: 'flex', overflowY: 'hidden' }} position="relative">
             <Drawer
                 sx={{
                     flexShrink: 0,
@@ -162,7 +162,7 @@ export default function Sidebar({ children }) {
                 <Box flexGrow={1} />
                 <List
                     sx={{
-                        bgcolor: 'background.paper',
+                        bgcolor: 'tonalOffset.light',
                         mt: 2,
                         position: 'sticky',
                         left: 0,
@@ -178,7 +178,7 @@ export default function Sidebar({ children }) {
             <Box
                 sx={{
                     color: 'white.main',
-                    backgroundColor: 'black.main'
+                    bgcolor: 'tonalOffset.light',
                 }}
                 width={'100%'}
                 position="relative"

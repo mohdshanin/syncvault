@@ -5,7 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { Box, Chip, Collapse, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { ChevronDownIcon, ChevronUpIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
-import * as globalConstants from './constants';
+import * as globalConstants from '../utils/constants';
 const { SIDEBAR_TABS } = globalConstants;
 
 const {

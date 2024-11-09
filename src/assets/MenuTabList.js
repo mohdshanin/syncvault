@@ -23,7 +23,7 @@ import { UserIcon as UserIconSolid } from '@heroicons/react/24/solid';
 import { UserIcon } from '@heroicons/react/24/outline';
 import { ArrowLeftEndOnRectangleIcon } from '@heroicons/react/24/outline';
 
-import * as globalConstants from './constants';
+import * as globalConstants from '../utils/constants';
 
 const { SIDEBAR_TABS, SUB_SIDEBAR_TABS } = globalConstants;
 

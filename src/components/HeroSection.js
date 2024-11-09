@@ -2,15 +2,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { PlayCircleIcon } from "@heroicons/react/24/outline";
-import { Space_Grotesk } from 'next/font/google';
-
-
-const spaceGrotesk = Space_Grotesk({
-    weight: ['300', '400', '500', '700'],
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-space-grotesk',
-});
+import { spaceGrotesk } from "../utils/fonts";
 
 const VideoComponent = () => {
     return (<Box
@@ -21,7 +13,7 @@ const VideoComponent = () => {
             justifyContent: "center",
             overflow: "hidden",
             position: "relative",
-            backgroundColor: "#000",
+            backgroundColor: "tonalOffset.light",
         }}
     >
         <video
@@ -66,27 +58,27 @@ export default function HeroSection({ rightTextContainer = false }) {
             >
                 <Box sx={{ maxWidth: "600px", textAlign: "left", zIndex: 1 }}>
                     {!rightTextContainer && <React.Fragment>
-                        <Box className={spaceGrotesk.className} fontSize={68} component="h1" mb={3} lineHeight={1.1} sx={{ fontWeight: 'medium' }}>
+                        <Box color={'grey.A100'} className={spaceGrotesk.className} fontSize={68} component="h1" mb={3} lineHeight={1.1} sx={{ fontWeight: 'medium' }}>
                             Welcome to SyncVault App
                         </Box>
-                        <Typography variant="body1" mb={5} pr={20} letterSpacing={.5}>
+                        <Typography color={'grey.A100'} variant="body1" mb={5} pr={20} letterSpacing={.5}>
                             The platform where artists, creators, and fans collaborate to expand
                             their audiences and earn rewards through unique monetization
                             opportunities.
                         </Typography>
                     </React.Fragment>}
                     {rightTextContainer && <React.Fragment>
-                        <Box className={spaceGrotesk.className} fontSize={68} component="h1" mb={3} lineHeight={1.1} sx={{ fontWeight: 'medium' }}>
+                        <Box color={'grey.A100'} className={spaceGrotesk.className} fontSize={68} component="h1" mb={3} lineHeight={1.1} sx={{ fontWeight: 'medium' }}>
                             Welcome to House of Cults
                         </Box>
-                        <Typography variant="body1" mb={5} pr={20} letterSpacing={.5}>
+                        <Typography color={'grey.A100'} variant="body1" mb={5} pr={20} letterSpacing={.5}>
                             Explore SyncVault&apos;s Web3 Features: Artists and creators can
                             create staking pools and voting polls, while fans participate
                             for exclusive rewards and Web3 benefits
                         </Typography>
                     </React.Fragment>}
                     <Box display="flex" gap={2}>
-                        <Button variant="contained" sx={{ backgroundColor: 'white.main', py: 2, fontWeight: 'bold', fontSize: 'large' }} size="large">
+                        <Button variant="contained" sx={{ backgroundColor: 'white.main', py: 1.5, fontWeight: 'bold', fontSize: 'large' }} size="large">
                             Learn More
                         </Button>
                         <Button
@@ -94,6 +86,7 @@ export default function HeroSection({ rightTextContainer = false }) {
                             startIcon={<PlayCircleIcon width={26} />}
                             size="large"
                             sx={{
+                                py: 1.5,
                                 fontWeight: 'bold',
                                 fontSize: 'large',
                                 border: '1px solid rgba(255, 255, 255, 0.3)',

@@ -2,20 +2,17 @@
 import Link from '@mui/material/Link';
 import * as NextLink from 'next/link';
 import { AppBar, Toolbar, Button, IconButton, Box, InputBase } from '@mui/material';
-import useTheme from '@mui/material/styles/useTheme';
 import { BellIcon } from '@heroicons/react/24/outline';
 
 import { SwitchWithIcons } from '../assets/SwitchWithIcon';
+import SearchInput from '../assets/SearchInput';
 
 import { useThemeContext } from '../utils/ThemeRegistry';
-import SearchInput from './SearchInput';
 
 const label = { inputProps: { "aria-label": "Theme Switch" } };
 
 function Topbar() {
     const { toggleTheme, activeTheme } = useThemeContext();
-    const theme = useTheme();
-    console.log('theme', theme);
 
     return (
         <AppBar
@@ -31,7 +28,7 @@ function Topbar() {
                 disableGutters
                 sx={{
                     color: 'grey.500',
-                    bgcolor: 'black.main'
+                    bgcolor: 'tonalOffset.dark'
                 }}>
                 {/* Search Bar */}
                 <SearchInput />

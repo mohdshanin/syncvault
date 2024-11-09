@@ -9,9 +9,11 @@ import styles from './page.module.css'
 
 import NoticeBanner from '../components/NoticeBanner';
 import HeroSection from '../components/HeroSection';
+import StatsSection from '../components/StatsSection';
 
 import { useThemeContext } from '../utils/ThemeRegistry';
 import { SwitchWithIcons } from '../assets/SwitchWithIcon'
+import CardsSection from '@/components/CardsSection';
 
 const label = { inputProps: { "aria-label": "Switch demo" } };
 
@@ -23,67 +25,9 @@ export default function Home() {
     <Box>
       <NoticeBanner />
       <HeroSection />
+      <StatsSection />
+      <CardsSection />
       <HeroSection rightTextContainer />
-      <Box
-        className={styles.container}
-      >
-
-        <Typography
-          variant="subtitle2"
-          fontWeight={400}
-        >
-          With default Theme:
-        </Typography>
-        <Box>Home Page</Box>
-        <Button
-          sx={{ backgroundColor: 'white.main' }}
-          variant="contained"
-          onClick={toggleTheme}
-        >
-          Switch to {activeTheme ? 'Light' : 'Dark'} Theme
-        </Button>
-        <Button
-          variant="contained"
-          color='primary'
-        >
-          primary Button
-        </Button>
-        <Button
-          variant="contained"
-          color='secondary'
-        >
-          secondary Button
-        </Button>
-        <Button
-          variant="contained"
-          color='success'
-        >
-          success Button
-        </Button>
-        <Button
-          variant="contained"
-          color='error'
-        >
-          error Button
-        </Button>
-        <Button
-          variant="contained"
-          color='info'
-        >
-          info Button
-        </Button>
-        <Button
-          variant="contained"
-          color='warning'
-        >
-          warning Button
-        </Button>
-        <SwitchWithIcons {...label}
-          checked={activeTheme}
-          onChange={toggleTheme}
-        />
-        <Link component={NextLink} color='white.main' href="/my-wallet">To My Wallet Page</Link>
-      </Box>
     </Box>
 
   );
