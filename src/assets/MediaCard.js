@@ -47,7 +47,6 @@ export default function MediaCard() {
                 color: 'white.main',
                 border: '1px solid',
                 borderColor: 'grey.900',
-                maxWidth: 345,
                 borderRadius: '4px',
                 width: 350,
                 mb: 5
@@ -190,7 +189,7 @@ export default function MediaCard() {
                 </Typography>
                 <Box sx={{ width: '100%' }}>
                     <LinearProgress sx={{
-                        bgcolor: '#333',
+                        bgcolor: 'grey.800',
                         [`& .${linearProgressClasses.bar}`]: {
                             bgcolor: '#FF0050',
                         },

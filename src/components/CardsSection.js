@@ -8,9 +8,9 @@ export default function CardsSection() {
     const title = 'Participate And Earn Rewards';
     const description = 'Join challenges, follow the rules, and earn cash prizes along with $SVT Tokens.';
     const buttonText = 'View All Challenges';
-    return (<Box sx={{ pl: 5 }}>
-        <HeaderOFHomeSection title={title} Description={description} buttonText={buttonText} />
-        <Box sx={{ display: 'flex', gap: 5, flexWrap: 'wrap', justifyContent: 'center', mr: 5 }}>
+    return (<Box sx={{ mb: 15 }}>
+        <HeaderOFHomeSection title={title} description={description} buttonText={buttonText} />
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
             <MediaCard />
             <MediaCard />
             <MediaCard />

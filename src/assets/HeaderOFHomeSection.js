@@ -10,13 +10,14 @@ export default function HeaderOFHomeSection({ title = 'Title', description = 'De
             sx={{
                 display: 'flex',
                 pt: 15,
+                pl: 5,
                 pb: 8,
                 width: '100%',
                 backgroundColor: "tonalOffset.light",
 
             }}
         >
-            <Box width={'60%'} pr={40} className={spaceGrotesk.className} fontSize={56} component="h2" mb={3} lineHeight={1.1} sx={{ fontWeight: 'medium' }}>
+            <Box width={'60%'} pr={30} className={spaceGrotesk.className} fontSize={56} component="h2" mb={3} lineHeight={1.1} sx={{ fontWeight: 'medium' }}>
                 {title}
             </Box>
             <Box width={'40%'} textAlign={'left'}>
