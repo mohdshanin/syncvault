@@ -52,7 +52,6 @@ export default function MediaCard() {
             }}
         >
             <Box sx={{
-                bgcolor: 'black.main',
                 color: 'white.main',
                 position: 'relative',
                 overflow: 'hidden',

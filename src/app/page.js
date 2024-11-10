@@ -8,6 +8,8 @@ import CardsSection from '@/components/CardsSection';
 import StakingPoolsSection from '@/components/StakingPoolsSection';
 import QuestSection from '@/components/QuestSection';
 import VotingPoolsSection from '@/components/VotingPoolsSection';
+import UniqueToolSection from '@/components/UniqueToolSection';
+import OtherFeaturesSection from '@/components/OtherFeaturesSection';
 
 
 export default function Home() {
@@ -25,6 +27,8 @@ export default function Home() {
       <StakingPoolsSection />
       <QuestSection />
       <VotingPoolsSection />
+      <UniqueToolSection />
+      <OtherFeaturesSection />
     </Box>
   );
 }

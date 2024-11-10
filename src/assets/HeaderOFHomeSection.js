@@ -4,7 +4,7 @@ import { Box, Typography, Button } from '@mui/material';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import { spaceGrotesk } from '../utils/fonts';
 
-export default function HeaderOFHomeSection({ title = 'Title', description = 'Description', buttonText = 'View' }) {
+export default function HeaderOFHomeSection({ title = '', description = '', buttonText = '' }) {
     return (
         <Box
             sx={{
@@ -14,17 +14,34 @@ export default function HeaderOFHomeSection({ title = 'Title', description = 'De
                 pb: 8,
                 width: '100%',
                 backgroundColor: "tonalOffset.light",
-
+                justifyContent: 'center',
             }}
         >
-            <Box width={'60%'} pr={30} className={spaceGrotesk.className} fontSize={56} component="h2" mb={3} lineHeight={1.1} sx={{ fontWeight: 'medium' }}>
-                {title}
-            </Box>
-            <Box width={'40%'} textAlign={'left'}>
-                <Typography variant="body1" sx={{ maxWidth: '450px', marginBottom: 4 }}>
+            {(description || buttonText)
+                ? <Box
+                    width={'60%'}
+                    pr={35}
+                    className={spaceGrotesk.className}
+                    fontSize={56} component="h2"
+                    mb={2.5}
+                    lineHeight={1.1}
+                    sx={{ fontWeight: 'medium' }}>
+                    {title}
+                </Box>
+                : <Box
+                    className={spaceGrotesk.className}
+                    fontSize={56}
+                    component="h2"
+                    mb={2.5}
+                    lineHeight={1.1}
+                    sx={{ fontWeight: 'medium' }}>
+                    {title}
+                </Box>}
+            {(description || buttonText) && <Box width={'40%'} textAlign={'left'}>
+                {description && <Typography variant="body1" sx={{ maxWidth: '450px', marginBottom: 4 }}>
                     {description}
-                </Typography>
-                <Button
+                </Typography>}
+                {buttonText && <Button
                     variant="outlined"
                     endIcon={<ArrowLongRightIcon width={24} />}
                     size='large'
@@ -43,8 +60,8 @@ export default function HeaderOFHomeSection({ title = 'Title', description = 'De
                     }}
                 >
                     {buttonText}
-                </Button>
-            </Box>
+                </Button>}
+            </Box>}
         </Box>
     );
 }

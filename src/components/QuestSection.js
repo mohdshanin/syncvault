@@ -71,14 +71,17 @@ export default function QuestSection() {
                                         {quest.creator}
                                     </Typography>
                                 </Box>
-                                <IconButton sx={{
-                                    backgroundColor: 'background.paper',
-                                    borderRadius: '2px',
-                                    py: .5,
-                                    border: '1.5px solid',
-                                    borderColor: 'grey.800',
-                                    width: 45,
-                                }}>
+                                <IconButton
+                                    disableRipple
+                                    sx={{
+                                        backgroundColor: 'background.paper',
+                                        borderRadius: '2px',
+                                        cursor: 'default',
+                                        py: .5,
+                                        border: '1.5px solid',
+                                        borderColor: 'grey.800',
+                                        width: 45,
+                                    }}>
                                     <YouTubeIcon />
                                 </IconButton>
                             </Box>
