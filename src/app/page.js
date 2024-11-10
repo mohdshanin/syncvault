@@ -16,7 +16,8 @@ export default function Home() {
 
   return (
     <Box>
-      <InformationBanner title={'$5,000 Syncvault Esports Tournament Live. To participate in the tournament'}
+      <InformationBanner
+        title={'$5,000 Syncvault Esports Tournament Live. To participate in the tournament'}
         path={'/my-participations'}
         typeNotice
       />
@@ -29,6 +30,10 @@ export default function Home() {
       <VotingPoolsSection />
       <UniqueToolSection />
       <OtherFeaturesSection />
+      <InformationBanner
+        title={'Click here to go to the top'}
+        path={'#'}
+      />
     </Box>
   );
 }
