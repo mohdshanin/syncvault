@@ -2,6 +2,7 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+
 import { spaceGrotesk } from '../utils/fonts';
 
 export default function HeaderOFHomeSection({ title = '', description = '', buttonText = '' }) {

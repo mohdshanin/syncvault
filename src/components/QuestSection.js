@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { Box, Typography, Card, CardContent, Avatar, Button, LinearProgress, IconButton } from '@mui/material';
-import InformationBanner from '@/assets/InformationBanner';
+import { Box, Typography, Card, CardContent, Avatar, LinearProgress, IconButton } from '@mui/material';
 
+import InformationBanner from '../assets/InformationBanner';
 import YouTubeIcon from '../assets/icons/youtube';
 
 export default function QuestSection() {

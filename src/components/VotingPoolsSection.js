@@ -1,10 +1,10 @@
-// components/VotingPoolsComponent.js
-
+'use client';
 import React from 'react';
 import { Box, Typography, Card, CardContent, Avatar, Button, LinearProgress, IconButton } from '@mui/material';
 import { ShareIcon } from '@heroicons/react/24/outline';
 import { UserGroupIcon } from '@heroicons/react/24/outline';
-import HeaderOFHomeSection from '@/assets/HeaderOFHomeSection';
+
+import HeaderOFHomeSection from '../assets/HeaderOFHomeSection';
 
 export default function VotingPoolsSection() {
     const title = 'SyncVault Voting Pools';

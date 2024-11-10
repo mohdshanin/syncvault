@@ -1,8 +1,8 @@
-// pages/index.js
-
-import HeaderOFHomeSection from '@/assets/HeaderOFHomeSection';
+'use client';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { Box, Button, Typography, Card, CardContent, CardMedia } from '@mui/material';
+
+import HeaderOFHomeSection from '../assets/HeaderOFHomeSection';
 
 export default function OtherFeaturesSection() {
     const title = 'Other Features';

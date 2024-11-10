@@ -3,7 +3,6 @@ import React from "react";
 import { Box, Typography, Button, IconButton } from "@mui/material";
 import { PlayCircleIcon } from "@heroicons/react/24/outline";
 import { spaceGrotesk } from "../utils/fonts";
-import { MusicalNoteIcon } from "@heroicons/react/24/outline";
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { PresentationChartBarIcon } from '@heroicons/react/24/outline';
 import { MegaphoneIcon } from '@heroicons/react/24/outline';

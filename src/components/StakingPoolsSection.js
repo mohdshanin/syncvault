@@ -1,8 +1,9 @@
 'use client';
 import React, { useState } from 'react';
 import { Box, Typography, Button, Avatar, Card, CardContent, Collapse, Divider, LinearProgress, linearProgressClasses } from '@mui/material';
-import HeaderOFHomeSection from '@/assets/HeaderOFHomeSection';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
+
+import HeaderOFHomeSection from '../assets/HeaderOFHomeSection';
 
 
 export default function StakingPoolsSection() {

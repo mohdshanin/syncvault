@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Box, Typography, Avatar, Stack, IconButton } from '@mui/material';
+import { Box, Typography, Avatar, Stack } from '@mui/material';
 import { ArrowDownIcon } from '@heroicons/react/24/outline';
 import { MusicalNoteIcon } from '@heroicons/react/24/outline';
 
