@@ -17,7 +17,7 @@ import * as MenuTabList from '../assets/MenuTabList';
 export default function Sidebar({ children }) {
     const theme = useTheme();
     const mode = theme.palette.mode;
-    const { GetStarted, Web2, Web3, ToolBaar, Settings } = MenuTabList;
+    const { SidebarTabs } = MenuTabList;
 
     return (
         <Box sx={{ display: 'flex', overflowY: 'hidden' }} position="relative">
@@ -47,6 +47,7 @@ export default function Sidebar({ children }) {
                         zIndex: 100,
                         left: 0,
                         top: 0,
+                        mb: 2
                     }}
                     disableGutters
                 >
@@ -70,70 +71,8 @@ export default function Sidebar({ children }) {
                         SyncVault
                     </Typography>
                 </Toolbar>
-                <List
-                    sx={{
-                        bgcolor: 'black.main',
-                        mt: 2,
-                    }}
-                    component="nav"
-                >
-                    {GetStarted.map((item, index) => <MenuListItem key={index} item={item} />)}
-                </List>
-                <List
-                    sx={{
-                        bgcolor: 'black.main',
-                        '& > *': {
-                            mb: 1, // Adds margin-bottom to all children
-                        },
-                        '& > *:last-child': {
-                            mb: 0, // Removes margin-bottom for the last child
-                        },
-                    }}
-                    component="nav"
-                    subheader={
-                        <ListSubheader
-                            sx={{
-                                color: 'grey.A700',
-                                bgcolor: 'black.main',
-                                m: 0,
-                            }}
-                            id="nested-list-subheader"
-                            component="div"
-                        >
-                            Web2
-                        </ListSubheader>
-                    }
-                >
-                    {Web2.map((item, index) => <MenuListItem key={index} item={item} />)}
-                </List>
-                <List
-                    sx={{
-                        bgcolor: 'black.main',
-                        '& > *': {
-                            mb: 1, // Adds margin-bottom to all children
-                        },
-                        '& > *:last-child': {
-                            mb: 0, // Removes margin-bottom for the last child
-                        },
-                    }}
-                    component="nav"
-                    subheader={
-                        <ListSubheader
-                            sx={{
-                                color: 'grey.A700',
-                                bgcolor: 'black.main',
-                            }}
-                            id="nested-list-subheader"
-                            component="div"
-                        >
-                            Web2
-                        </ListSubheader>
-                    }
-                >
-                    {Web3.map((item, index) => <MenuListItem key={index} item={item} />)}
 
-                </List>
-                <List
+                {Object.keys(SidebarTabs).map((tab) => <List key={tab}
                     sx={{
                         bgcolor: 'black.main',
                         '& > *': {
@@ -142,39 +81,37 @@ export default function Sidebar({ children }) {
                         '& > *:last-child': {
                             mb: 0, // Removes margin-bottom for the last child
                         },
+                        ...(tab === 'Settings' && {
+                            bgcolor: 'tonalOffset.light',
+                            mt: 2,
+                            position: 'sticky',
+                            left: 0,
+                            bottom: 0,
+                            borderTop: '2px solid',
+                            borderColor: 'grey.900',
+                        }),
                     }}
                     component="nav"
-                    subheader={
-                        <ListSubheader
-                            sx={{
-                                color: 'grey.A700',
-                                bgcolor: 'black.main',
-                            }}
-                            id="nested-list-subheader"
-                            component="div"
-                        >
-                            Toolbar
-                        </ListSubheader>
-                    }
+                    {...((tab !== 'GetStarted' && tab !== 'Settings') && {
+                        subheader: (
+                            <ListSubheader
+                                sx={{
+                                    color: 'grey.A700',
+                                    bgcolor: 'black.main',
+                                }}
+                                id="nested-list-subheader"
+                                component="div"
+                            >
+                                {tab}
+                            </ListSubheader>
+                        ),
+                    })}
                 >
-                    {ToolBaar.map((item, index) => <MenuListItem key={index} item={item} />)}
+                    {SidebarTabs[tab]?.map((item, index) => <MenuListItem key={index} item={item} />)}
                 </List>
-                <Box flexGrow={1} />
-                <List
-                    sx={{
-                        bgcolor: 'tonalOffset.light',
-                        mt: 2,
-                        position: 'sticky',
-                        left: 0,
-                        bottom: 0,
-                        borderTop: '2px solid',
-                        borderColor: 'grey.900'
-                    }}
-                    component="div"
-                >
-                    {Settings.map((item, index) => <MenuListItem key={index} item={item} />)}
-                </List>
+                )}
             </Drawer>
+
             <Box
                 sx={{
                     color: 'white.main',

@@ -50,117 +50,122 @@ const {
     DISTRIBUTION,
 } = SUB_SIDEBAR_TABS;
 
-export const GetStarted = [
-    {
-        tab: GET_STARTED,
-        icon: <HomeIcon width="24px" />,
-        iconSelect: <HomeIconSolid width="24px" />,
-    },
-];
-
-export const Web2 = [{
-    tab: USE_EARN,
-    icon: <BoltIcon width="24px" />,
-    iconSelect: <BoltIconSolid width="24px" />,
-    subHeader: 'Web3',
-},
-{
-    tab: CLAIM_FREE_MUSIC,
-    icon: <MusicalNoteIcon width="24px" />,
-    iconSelect: <MusicalNoteIconSolid width="24px" />,
-},];
-
-export const Web3 = [{
-    tab: QUESTS,
-    icon: <PuzzlePieceIcon width="24px" />,
-    iconSelect: <PuzzlePieceIconSolid width="24px" />,
-    subHeader: 'Web3',
-},
-{
-    tab: STAKING_POOLS,
-    icon: <FireIcon width="24px" />,
-    iconSelect: <FireIconSolid width="24px" />,
-},
-{
-    tab: VOTING_POLLS,
-    icon: <ServerStackIcon width="24px" />,
-    iconSelect: <ServerStackIconSolid width="24px" />,
-},];
-
-export const ToolBaar = [{
-    tab: MY_PARTICIPATIONS,
-    icon: <TicketIcon width="24px" />,
-    iconSelect: <TicketIconSolid width="24px" />,
-    subHeader: 'ToolBar',
-},
-{
-    tab: ARTIST_TOOLS,
-    icon: <SparklesIcon width="24px" />,
-    iconSelect: <SparklesIconSolid width="24px" />,
-    menuOptions: [
+export const SidebarTabs = {
+    GetStarted: [
         {
-            subTab: DASHBOARD,
-        },
-        {
-            subTab: CHALLENGES,
-        },
-        {
-            subTab: PROMOTION,
-        },
-        {
-            subTab: CONTENT_ID,
-        },
-        {
-            subTab: DISTRIBUTION,
-        },
-        {
-            subTab: STAKING_POOLS,
-        },
-        {
-            subTab: VOTING_POLLS,
+            tab: GET_STARTED,
+            icon: <HomeIcon width="24px" />,
+            iconSelect: <HomeIconSolid width="24px" />,
         },
     ],
-},
-{
-    tab: CREATOR_TOOLS,
-    icon: <VideoCameraIcon width="24px" />,
-    iconSelect: <VideoCameraIconSolid width="24px" />,
-    menuOptions: [
+    Web2: [
         {
-            subTab: DASHBOARD,
+            tab: USE_EARN,
+            icon: <BoltIcon width="24px" />,
+            iconSelect: <BoltIconSolid width="24px" />,
+            subHeader: 'Web3',
         },
         {
-            subTab: CHALLENGES,
-        },
-        {
-            subTab: PROMOTION,
-        },
-        {
-            subTab: CONTENT_ID,
+            tab: CLAIM_FREE_MUSIC,
+            icon: <MusicalNoteIcon width="24px" />,
+            iconSelect: <MusicalNoteIconSolid width="24px" />,
         },
     ],
-},
-{
-    tab: BRAND_TOOLS,
-    icon: <MapIcon width="24px" />,
-    iconSelect: <MapIconSolid width="24px" />,
-    menuOptions: [
+    Web3: [
         {
-            subTab: DASHBOARD,
+            tab: QUESTS,
+            icon: <PuzzlePieceIcon width="24px" />,
+            iconSelect: <PuzzlePieceIconSolid width="24px" />,
+            subHeader: 'Web3',
         },
         {
-            subTab: CHALLENGES,
+            tab: STAKING_POOLS,
+            icon: <FireIcon width="24px" />,
+            iconSelect: <FireIconSolid width="24px" />,
+        },
+        {
+            tab: VOTING_POLLS,
+            icon: <ServerStackIcon width="24px" />,
+            iconSelect: <ServerStackIconSolid width="24px" />,
         },
     ],
-},];
+    Toolbar: [
+        {
+            tab: MY_PARTICIPATIONS,
+            icon: <TicketIcon width="24px" />,
+            iconSelect: <TicketIconSolid width="24px" />,
+            subHeader: 'ToolBar',
+        },
+        {
+            tab: ARTIST_TOOLS,
+            icon: <SparklesIcon width="24px" />,
+            iconSelect: <SparklesIconSolid width="24px" />,
+            menuOptions: [
+                {
+                    subTab: DASHBOARD,
+                },
+                {
+                    subTab: CHALLENGES,
+                },
+                {
+                    subTab: PROMOTION,
+                },
+                {
+                    subTab: CONTENT_ID,
+                },
+                {
+                    subTab: DISTRIBUTION,
+                },
+                {
+                    subTab: STAKING_POOLS,
+                },
+                {
+                    subTab: VOTING_POLLS,
+                },
+            ],
+        },
+        {
+            tab: CREATOR_TOOLS,
+            icon: <VideoCameraIcon width="24px" />,
+            iconSelect: <VideoCameraIconSolid width="24px" />,
+            menuOptions: [
+                {
+                    subTab: DASHBOARD,
+                },
+                {
+                    subTab: CHALLENGES,
+                },
+                {
+                    subTab: PROMOTION,
+                },
+                {
+                    subTab: CONTENT_ID,
+                },
+            ],
+        },
+        {
+            tab: BRAND_TOOLS,
+            icon: <MapIcon width="24px" />,
+            iconSelect: <MapIconSolid width="24px" />,
+            menuOptions: [
+                {
+                    subTab: DASHBOARD,
+                },
+                {
+                    subTab: CHALLENGES,
+                },
+            ],
+        },],
+    Settings: [
+        {
+            tab: PROFILE_SETTINGS,
+            icon: <UserIcon width="24px" />,
+            iconSelect: <UserIconSolid width="24px" />,
 
-export const Settings = [{
-    tab: PROFILE_SETTINGS,
-    icon: <UserIcon width="24px" />,
-    iconSelect: <UserIconSolid width="24px" />,
-
-},
-{
-    tab: EXIT_APP,
-    icon: <ArrowLeftEndOnRectangleIcon width="24px" />
-},];
+        },
+        {
+            tab: EXIT_APP,
+            icon: <ArrowLeftEndOnRectangleIcon width="24px" />
+        },
+    ]
+};

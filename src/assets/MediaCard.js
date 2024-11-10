@@ -1,7 +1,6 @@
 'use client'
 import React, { useRef, useState } from 'react';
 import { Card, CardMedia, CardContent, Typography, IconButton, Box, Avatar } from '@mui/material';
-import useTheme from '@mui/material/styles/useTheme';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import { ShareIcon } from '@heroicons/react/24/outline';
 import { PlusIcon } from '@heroicons/react/24/outline';
@@ -17,12 +16,10 @@ import HeartFilledIcon from './icons/heartfilled';
 
 export default function MediaCard() {
     const videoRef = useRef(null);
-    const theme = useTheme();
     const [isPlaying, setIsPlaying] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
     const [isIconHovered, setIsIconHovered] = useState(false);
-    console.log('theme', theme);
 
     const handlePlayPause = () => {
         if (videoRef.current) {
@@ -43,17 +40,19 @@ export default function MediaCard() {
                 setIsIconHovered(false); // reset BarChart hover state on leaving card
             }}
             sx={{
-                bgcolor: theme.palette.black.main,
                 color: 'white.main',
                 border: '1px solid',
-                borderColor: 'grey.900',
                 borderRadius: '4px',
                 width: 350,
-                mb: 5
+                mb: 5,
+                borderColor: 'background.paper',
+                '&:hover': {
+                    backgroundColor: 'grey.900',
+                },
             }}
         >
             <Box sx={{
-                backgroundColor: theme.palette.black.main,
+                bgcolor: 'black.main',
                 color: 'white.main',
                 position: 'relative',
                 overflow: 'hidden',
@@ -163,16 +162,17 @@ export default function MediaCard() {
                         display: 'flex',
                         alignItems: 'center',
                         backgroundColor: 'background.paper',
-                        borderRadius: '50px',        // Rounded edges
+                        borderRadius: '50px',
                         p: 1,
-                        border: '1px solid #444',
-                        width: 'fit-content',  // Light border color
+                        border: '1px solid',
+                        borderColor: 'grey.900',
+                        width: 'fit-content',
                         my: 2
                     }}
                 >
                     <Avatar
                         alt="Artist Name"
-                        src="/user.png"  // Replace with the path to your avatar image
+                        src="/user.png"
                         sx={{ width: 24, height: 24, marginRight: 1 }}
                     />
                     <Typography

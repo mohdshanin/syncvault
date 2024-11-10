@@ -51,7 +51,10 @@ export default function StakingPoolsSection() {
 
     return (
         <Box sx={{ mb: 15 }}>
+            {/* Voting Pool Banner */}
             <HeaderOFHomeSection title={title} description={description} buttonText={buttonText} />
+
+            {/* Voting Pool Cards */}
             <Box sx={{ display: 'flex', gap: 2, mt: 3, mx: 5, flexWrap: 'wrap', justifyContent: 'space-around' }}>
                 {poolData.map((pool) => (
                     <PoolCard key={pool.id} pool={pool} />
@@ -78,9 +81,9 @@ function PoolCard({ pool }) {
             }}>
             <Box sx={{ display: 'flex', py: 2, alignItems: 'center' }}>
                 <CardContent sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Box display={'flex'} alignItems={'center'}>
+                    <Box display={'flex'} alignItems={'center'} >
                         <Avatar src="/avatar4.png" alt="Creator Avatar" sx={{ width: 48, height: 48, mr: 1 }} />
-                        <Box pr={12} >
+                        <Box  >
                             <Typography variant="h6">{pool.title}</Typography>
                             <Typography
                                 variant="body2"
@@ -90,21 +93,22 @@ function PoolCard({ pool }) {
                                     py: 0.5,
                                     bgcolor: 'grey.900',
                                     width: 'fit-content',
+                                    color: 'grey.100'
                                 }}
                             >
                                 by {pool.creator}
                             </Typography>
                         </Box>
                     </Box>
-                    <Box sx={{ textAlign: 'center' }}>
+                    <Box sx={{ textAlign: 'center', mr: 5 }}>
                         <Typography variant="body1" color="grey.500">APY</Typography>
                         <Typography variant="h6">{pool.apy}</Typography>
                     </Box>
-                    <Box sx={{ textAlign: 'center' }}>
+                    <Box sx={{ textAlign: 'center', mr: 5 }}>
                         <Typography variant="body2" color="grey.500">Remaining</Typography>
                         <Typography variant="h6">{pool.remaining}</Typography>
                     </Box>
-                    <Box sx={{ textAlign: 'center' }}>
+                    <Box sx={{ textAlign: 'center', mr: 5 }}>
                         <Typography variant="body2" color="grey.500">Reward</Typography>
                         <Typography variant="h6">{pool.reward}</Typography>
                     </Box>
@@ -116,8 +120,10 @@ function PoolCard({ pool }) {
                             fontSize: 'medium',
                             border: '1px solid rgba(255, 255, 255, 0.3)',
                             borderRadius: '4px',
-                            color: 'grey.500',
+                            color: 'grey.400',
                             borderColor: 'rgba(255, 255, 255, 0.2)',
+                            py: 1,
+                            pr: 3,
                             '&:hover': {
                                 backgroundColor: 'rgba(255, 255, 255, 0.2)',
                                 border: '1px solid rgba(255, 255, 255, 0.7)',
@@ -129,9 +135,9 @@ function PoolCard({ pool }) {
                 </CardContent>
             </Box>
             <Collapse in={expanded} timeout="auto" unmountOnExit sx={{ borderRadius: 4 }}>
-                <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.2)', my: 1 }} />
-                <Box sx={{ display: 'flex', width: '100%', mb: 4, mt: 8 }}>
-                    <Box sx={{ width: '50%', mr: 5, ml: 3 }}>
+                <Divider sx={{ borderColor: 'grey.A700', my: 1 }} />
+                <Box sx={{ display: 'flex', width: '100%', mb: 4, mt: 8, px: 3 }}>
+                    <Box sx={{ width: '50%', mr: 5 }}>
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
                             <Typography variant="body2" color="grey.500" >Total Pool Amount</Typography>
                             <Typography variant="body2">{pool.poolAmount}</Typography>
