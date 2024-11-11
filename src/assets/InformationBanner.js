@@ -24,7 +24,7 @@ export default function InformationBanner({ typeNotice = false, title = 'Some im
                 justifyContent: typeNotice ? 'space-between' : 'center',
                 py: path !== '#' ? 1 : 0,
                 px: path !== '#' ? 4 : 0,
-                background: 'linear-gradient(90deg, #8a0032, #4a0032)',
+                background: 'linear-gradient(to right, #973656, #800B31 15%, #28000D 35%, #28000D 65%, #800B31 85%, #973656)',
                 color: 'grey.100',
                 width: '100%',
                 borderRadius: typeNotice ? 0 : 1,

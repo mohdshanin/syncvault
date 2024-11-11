@@ -131,11 +131,10 @@ export default function Sidebar({ children }) {
                     left={0}
                     bottom={0}
                     pt={9}
-                    sx={{
-                        overflowY: 'scroll'
-                    }}
                 >
-                    {children}
+                    <Box sx={{ overflowY: 'scroll' }} width={'100%'} height={'100%'}>
+                        {children}
+                    </Box>
                 </Box>
             </Box>
         </Box>
